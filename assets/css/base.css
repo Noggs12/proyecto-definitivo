@@ -1,0 +1,263 @@
+/* Base styles shared across Vinya Luminària pages */
+:root {
+  /* Color tokens to support light and dark mode */
+  --bg-color: #fdfbf7;
+  --text-color: #1f1f1f;
+  --accent-color: #9b4b34;
+  --muted-color: #5c4c43;
+  --card-bg: #ffffff;
+}
+
+body {
+  /* Use rem so text scales with root font-size */
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 1rem;
+  margin: 0;
+  background: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.theme-toggle {
+  /* Hide the checkbox but keep it accessible */
+  position: absolute;
+  left: -9999px;
+}
+
+.theme-toggle:checked + .page {
+  /* Dark mode variables */
+  --bg-color: #151515;
+  --text-color: #f5efe6;
+  --accent-color: #ffb347;
+  --muted-color: #d5c7bc;
+  --card-bg: #1f1f1f;
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+.page {
+  /* Provide consistent padding for the wrapper */
+  min-height: 100vh;
+  background: var(--bg-color);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+header {
+  /* Sticky header keeps navigation visible */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(253, 251, 247, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.theme-toggle:checked + .page header {
+  background: rgba(21, 21, 21, 0.95);
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-bar {
+  /* Flexbox for horizontal nav items */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.5rem 1.5rem;
+}
+
+.logo {
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--accent-color);
+  text-transform: uppercase;
+}
+
+nav ul {
+  /* Horizontal list for navigation links */
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+  transition: color 0.2s ease, border-bottom 0.2s ease;
+  padding-bottom: 0.25rem;
+  border-bottom: 2px solid transparent;
+}
+
+nav a:hover,
+nav a:focus {
+  /* Hover pseudo-class requirement */
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.menu-toggle {
+  /* Style for dark mode toggle label */
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--muted-color);
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+footer {
+  background: #111;
+  color: #f8f8f8;
+  padding: 2rem 1.5rem;
+}
+
+.theme-toggle:checked + .page footer {
+  background: #050505;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: space-between;
+}
+
+.footer-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.hero img {
+  width: 100%;
+  border-radius: 1rem;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--accent-color);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  border: none;
+  text-decoration: none;
+  margin-top: 1rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.cards {
+  /* Grid requirement for card layout */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.highlight-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+th,
+td {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0.75rem;
+}
+
+form {
+  display: grid;
+  gap: 1rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  background: var(--card-bg);
+}
+
+form::after {
+  /* Pseudo-element describing form status */
+  content: "Brindemos por tu próxima visita";
+  font-size: 0.9rem;
+  color: var(--muted-color);
+  text-align: center;
+}
+
+label {
+  font-weight: 600;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid #cfcfcf;
+  font-size: 1rem;
+}
+
+button[type="submit"] {
+  background: var(--accent-color);
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.media-wrapper {
+  margin-top: 2rem;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  nav ul {
+    gap: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .hide-mobile {
+    display: none;
+  }
+}
+

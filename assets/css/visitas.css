@@ -1,0 +1,25 @@
+@import url("./base.css");
+
+/* Visit planning page */
+.visit-intro {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+}
+
+.visit-intro img {
+  flex: 1 1 320px;
+  border-radius: 1rem;
+  width: 100%;
+}
+
+.visit-details {
+  flex: 1 1 300px;
+}
+
+.schedule-table caption {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+

@@ -1,0 +1,37 @@
+@import url("./base.css");
+
+/* Home specific enhancements */
+.heritage {
+  margin-top: 3rem;
+}
+
+.heritage ol {
+  /* Ordered list styling */
+  padding-left: 1.25rem;
+  color: var(--muted-color);
+}
+
+.awards {
+  margin-top: 3rem;
+}
+
+.awards ul {
+  /* Unordered list styling */
+  padding-left: 1.5rem;
+}
+
+.gallery-grid {
+  /* Additional grid showcase */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 0.75rem;
+}
+

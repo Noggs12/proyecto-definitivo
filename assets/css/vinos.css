@@ -1,0 +1,28 @@
+@import url("./base.css");
+
+/* Wine catalog layout */
+.wine-catalog {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.wine-card {
+  border-radius: 1rem;
+  padding: 1.25rem;
+  background: var(--card-bg);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.wine-card h3 {
+  margin-top: 0.5rem;
+  color: var(--accent-color);
+}
+
+.notes {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+

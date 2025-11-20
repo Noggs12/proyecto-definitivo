@@ -1,0 +1,20 @@
+@import url("./base.css");
+
+/* Contact page specific styles */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.contact-card {
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background: var(--card-bg);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.contact-card p {
+  margin: 0.25rem 0;
+}
+
